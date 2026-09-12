@@ -1,0 +1,28 @@
+name: Bootstrap Node 24 lockfile
+on:
+  push:
+    branches: [chore/node24-vite]
+permissions:
+  contents: write
+jobs:
+  lockfile:
+    if: github.repository == 'AngKernel/watermark'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Generate and commit only the npm lockfile on the migration branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --version
+          npm --version
+          npm install --package-lock-only --ignore-scripts
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- package-lock.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'build: lock Node 24 dependencies'
+          git push origin HEAD:chore/node24-vite
