@@ -1,32 +1,25 @@
 {
+  "name": "watermark",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "engines": { "node": ">=24 <25", "npm": ">=11" },
   "scripts": {
-    "start": "roadhog server",
-    "build": "roadhog build",
-    "lint": "eslint --ext .js src test",
-    "precommit": "npm run lint"
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test test/watermark.test.js",
+    "test:e2e": "playwright test",
+    "check": "npm test && npm run build && npm run test:e2e"
   },
   "dependencies": {
-    "dva": "^2.1.0",
-    "dxc-flex": "^1.0.3",
-    "dxc-input": "^0.1.6",
-    "dxc-upload": "^1.0.3",
-    "fs-alert": "^0.3.0",
-    "qq-share": "^1.0.1",
-    "react": "^16.2.0",
-    "react-color": "^2.14.1",
-    "react-dom": "^16.2.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "babel-plugin-dva-hmr": "^0.4.1",
-    "eslint": "^4.14.0",
-    "eslint-config-umi": "^0.1.1",
-    "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
-    "husky": "^0.12.0",
-    "redbox-react": "^1.4.3",
-    "roadhog": "^2.0.0"
+    "@playwright/test": "^1.58.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "vite": "^8.0.0"
   }
 }
