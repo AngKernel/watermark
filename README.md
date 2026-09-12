@@ -2,6 +2,8 @@
 
 基于 [dxcweb/watermark](https://github.com/dxcweb/watermark) 的纯前端 Canvas 水印工具。为证件或其他图片添加用途说明，所有图片处理都在浏览器本地完成。
 
+**在线使用：[https://angkernel.github.io/watermark/](https://angkernel.github.io/watermark/)**
+
 本项目已将旧 roadhog / webpack / dva 构建链迁移为 **Vite 8 + React 19**，支持 **Node.js 24.x、npm 11+**，不需要降级 Node，也不需要 `--openssl-legacy-provider` 或 `--legacy-peer-deps`。
 
 ## 启动
@@ -72,7 +74,7 @@ GitHub Pages 只托管页面和静态资源，不提供图片上传接口；水�
 - JPEG 不支持透明背景，透明区域导出为白色；动图只处理一帧，不保留动画。
 - 数值输入会按有效范围处理；无效或损坏的图片会显示错误，不覆盖此前已成功加载的预览。
 
-颜色控件改为浏览器原生选择器，不再依赖旧 `react-color`。保留原作者署名及捐助图片，放在可展开的“支持原作者”区域。
+颜色控件改为浏览器原生选择器，不再依赖旧 `react-color`。保留原作者署名；此版本维护者的收款二维码放在可展开的“支持此版本维护者”区域。
 
 ## 隐私
 
