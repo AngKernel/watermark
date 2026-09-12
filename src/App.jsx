@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import Watermark from './routes/Main/Watermark.js';
 import example from './routes/Main/example.jpg';
-import wx from './routes/Donation/wx.jpeg';
-import zfb from './routes/Donation/zfb.jpg';
+import wx from './routes/Donation/support-wechat.png';
+import zfb from './routes/Donation/support-alipay.png';
 
 const INITIAL = {
   text: '仅用于办理住房公积金，他用无效。',
@@ -133,10 +133,10 @@ export default function App() {
       <footer>
         <p>基于原作者 dxcweb 的 Canvas 水印项目，迁移到 Node.js 24。</p>
         <details>
-          <summary>支持原作者</summary>
+          <summary>支持此版本维护者</summary>
           <div className="donations">
-            <figure><img src={wx} alt="原作者微信捐助二维码" width="180" height="180" loading="lazy" /><figcaption>微信</figcaption></figure>
-            <figure><img src={zfb} alt="原作者支付宝捐助二维码" width="180" height="180" loading="lazy" /><figcaption>支付宝</figcaption></figure>
+            <figure><img src={wx} alt="此版本维护者微信收款二维码" width="180" height="180" loading="lazy" /><figcaption>微信</figcaption></figure>
+            <figure><img src={zfb} alt="此版本维护者支付宝收款二维码" width="180" height="180" loading="lazy" /><figcaption>支付宝</figcaption></figure>
           </div>
         </details>
       </footer>
